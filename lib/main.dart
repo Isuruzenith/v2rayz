@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'pages/home_page.dart';
 
 void main() {
   runApp(const V2rayZ());
@@ -11,28 +12,26 @@ class V2rayZ extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'V2rayZ',
-      home: const homePage(),
-    );
-  }
-}
-
-class homePage extends StatefulWidget {
-  const homePage({super.key});
-
-  @override
-  State<homePage> createState() => _homePageState();
-}
-
-class _homePageState extends State<homePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('V2rayZ'),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        colorSchemeSeed: const Color(0xFF6C63FF),
+        useMaterial3: true,
+        scaffoldBackgroundColor: const Color(0xFF0D0D1A),
+        cardTheme: const CardThemeData(
+          color: Color(0xFF1A1A2E),
+          elevation: 0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(16)),
+          ),
+        ),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          centerTitle: true,
+        ),
       ),
-      body: const Center(
-        child: Text('Welcome to V2rayZ!'),
-      ),
+      home: const HomePage(),
     );
   }
 }
