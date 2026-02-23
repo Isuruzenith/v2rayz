@@ -11,15 +11,28 @@ class V2rayZ extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'V2rayZ',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const Scaffold(
-        body: Center(
-          child: Text('Hello, V2rayZ!'),
-        ),
-      ),
+      home: const homePage(),
     );
   }
 }
 
+class homePage extends StatefulWidget {
+  const homePage({super.key});
+
+  @override
+  State<homePage> createState() => _homePageState();
+}
+
+class _homePageState extends State<homePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('V2rayZ'),
+      ),
+      body: const Center(
+        child: Text('Welcome to V2rayZ!'),
+      ),
+    );
+  }
+}
